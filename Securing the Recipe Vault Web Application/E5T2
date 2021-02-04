@@ -1,0 +1,25 @@
+Tool used for Scanning infrastructure as code templates
+
+Checkov  :  To detect cloud misconfigurations, it scans your cloud infrastructure, which is managed in Kubernetes, Terraform, and Cloudformation.
+
+Example vulnerability:
+EC2SecurityGroupMissingEgressRule : Missing egress rule in NoIngressSecurityGroup means all traffic is allowed outbound. Make this explicit if it is desired configuration
+
+
+Tool used for Scanning AMI’s or containers for OS vulnerabilities
+
+Anchore : The Anchore engine is an open source project that inspects, analyzes, and certifies Docker images.
+
+Example vulnerability
+| Vulnerability ID | Package                          | Severity | Fix       | Vulnerability URL                                            |
+| ---------------- | -------------- ------------------| -------- | --------- | ------------------------------------------------------------ |
+| CVE-2017-1000379  | linux-libc-dev-4.9.88-1+deb9u1 | High     |  None      |  https://security-tracker.debian.org/tracker/CVE-2017-1000379|
+
+
+
+Tool used for Scanning an AWS environment for cloud configuration vulnerabilities
+
+AWS Config is an effective tool for assessing, evaluating, recording, auditing configurations of the resources in your AWS environment. It simplifies security analysis, compliance auditing, operational troubleshooting, and change management.
+
+Example vulnerability
+securityhub-restricted-ssh-9f0bf0ee: Checks whether the incoming SSH traffic for the security groups is accessible. The rule is compliant when the IP addresses of the incoming SSH traffic in the security groups are restricted. This rule applies only to IPv4.

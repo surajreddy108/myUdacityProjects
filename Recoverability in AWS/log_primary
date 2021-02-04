@@ -1,0 +1,46 @@
+login as: ec2-user
+Authenticating with public key "imported-openssh-key"
+Last login: Tue Dec  8 03:30:47 2020 from 27.59.129.171
+
+       __|  __|_  )
+       _|  (     /   Amazon Linux 2 AMI
+      ___|\___|___|
+
+https://aws.amazon.com/amazon-linux-2/
+[ec2-user@ip-10-1-11-225 ~]$ sudo su
+[root@ip-10-1-11-225 ec2-user]# mysql -u admin -h database-2.cpeux8sghiaz.us-east-2.rds.amazonaws.com -p
+Enter password:
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MySQL connection id is 20
+Server version: 5.7.22-log Source distribution
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MySQL [(none)]> use UDACITY
+Database changed
+MySQL [UDACITY]> CREATE TABLE MYTABLE (message CHAR(20));
+Query OK, 0 rows affected (0.05 sec)
+
+MySQL [UDACITY]> show tables;
++-------------------+
+| Tables_in_UDACITY |
++-------------------+
+| MYTABLE           |
++-------------------+
+1 row in set (0.00 sec)
+
+MySQL [UDACITY]> INSERT INTO MYTABLE VALUES ('HELLO WORLD');
+Query OK, 1 row affected (0.01 sec)
+
+MySQL [UDACITY]> SELECT * FROM MYTABLE;
++-------------+
+| message     |
++-------------+
+| HELLO WORLD |
++-------------+
+1 row in set (0.00 sec)
+
+MySQL [UDACITY]>
+

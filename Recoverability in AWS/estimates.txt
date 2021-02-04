@@ -1,0 +1,32 @@
+## Minimum RTO for a single AZ outage
+
+| Time  | Description                                                |
+| ----- | ---------------------------------------------------------- |
+| 00:01 | Problem happens (First minute)                             |
+| 00:06 | An amount of time passes before an alert triggers (5 mins) |
+| 00:07 | Automatically switch to second availability zone (1 mins)  |
+
+**Total time around 8 mins**
+
+## Minimum RTO for a single region outage
+
+| Time  | Description                                                                                 |
+| ----- | ------------------------------------------------------------------------------------------- |
+| 00:01 | Problem happens (First minute)                                                              |
+| 00:06 | An amount of time passes before an alert triggers (5 mins)                                  |
+| 00:07 | Alert triggers on-all staff (1 mins)                                                        |
+| 00:17 | On-call staff starts to logging onto VPN (10 mins) 							  |
+| 00:27 | On-call staff starts diagnosing the issue (10 mins)                                         |
+| 00:37 | Root cause is discovered (10 mins)                                                          |
+| 00:47 | Remediation started (10 mins)                                                               |
+| 00:52 | Issue fixed (5 mins)                                                                        |
+
+**Total time around 55 mins**
+
+## Minimum RPO for a single AZ outage
+
+RDS has synchronous replication in Mutli AZ deployments, so RPO would be less(5mins).
+
+## Minimum RPO for a single region outage
+
+The RPO  depends on how quickly AWS DMS consumes the captured changes that are available from the source Amazon RDS for SQL Server instance and applies them to the target. Since here it is asynchronous replication it would be near 10mins.
